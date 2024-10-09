@@ -1,7 +1,8 @@
 #include "Customer.h"
  
 Customer::Customer(GroceryStore &subject, std::string name) : subject_(subject), name_(name) {
-    this->subject_.subscribe(this);
+    if(name_ == "") name_ = "AnonymousCustomer" ;
+    this->subject_.subscribe(this) ;
 }
 
 Customer::~Customer() {
