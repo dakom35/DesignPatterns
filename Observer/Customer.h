@@ -1,3 +1,6 @@
+#ifndef CUSTOMER_H
+#define CUSTOMER_H
+
 #include "Observer.h"
 #include "GroceryStore.h"
 
@@ -14,4 +17,11 @@ public:
     void unsubscribeCustomer();
     bool purchaseItem(std::string itemName,GroceryItem* groceryInventory);
 
+    GroceryStore& getSubject();
+    std::string getName() ;
+    void setName(std::string &name);
+
+
 };
+
+#endif

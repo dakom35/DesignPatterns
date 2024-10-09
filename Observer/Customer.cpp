@@ -32,3 +32,18 @@ bool Customer::purchaseItem(std::string itemName, GroceryItem* groceryInventory)
     return false;
 }
 
+// Getter for subject_
+GroceryStore& Customer::getSubject() {
+    return subject_;
+}
+
+// Getter for name_
+std::string Customer::getName() {
+    return name_;
+}
+
+// Setter for name_
+void Customer::setName(std::string &name) {
+    name_ = name;
+}
+
