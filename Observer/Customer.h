@@ -5,9 +5,10 @@ class Customer : public Observer {
  
 private:
     GroceryStore &subject_;
+    std::string name_ ;
 
 public:
-    Customer(GroceryStore &subject);
+    Customer(GroceryStore &subject, std::string name);
     virtual ~Customer();
     void update(const string &msg);
     void unsubscribeCustomer();
