@@ -21,7 +21,8 @@ bool Customer::purchaseItem(string itemName,GroceryItem* groceryInventory) {
     std::cout << "Customer wants to purchase item " << itemName << " - ";
     for (int i = 0; i < TOTAL_GROCERY_ITEMS; i++) {
         if (itemName == groceryInventory[i].itemName) {
-            if (groceryInventory[i].available) {
+            if (groceryInventory[i].quantity > 0) {
+                groceryInventory[i].quantity--;
                 cout << "Item " << itemName << " is available\n";
                 return true;
             }
