@@ -2,6 +2,7 @@
 #define TESTCUSTOMER_H
 #include "../Customer.h"
 
-void test_constructor(Customer *customer);
+bool test_constructor_name_pass(GroceryStore *groceryStore, std::string name);
+void interpret_test(bool expected, bool actual, int num);
 
 #endif 
