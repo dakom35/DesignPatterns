@@ -8,6 +8,8 @@ int main(void){
     GroceryStore *groceryStore = new GroceryStore(itemList);
     bool res = test_constructor_name_pass(groceryStore,"John ColdTrain");
     interpret_test(true,res,0);
+    res = test_constructor_name_empty(groceryStore,"");
+    interpret_test(true,res,1);
 
 
 }
@@ -16,6 +18,16 @@ int main(void){
 bool test_constructor_name_pass(GroceryStore *groceryStore, std::string name){
     Customer *customer = new Customer(*groceryStore,name);
     if(customer->getName() == name){
+        return true ;
+    }
+    else{
+        return false ; 
+    }
+}
+
+bool test_constructor_name_empty(GroceryStore *groceryStore, std::string name){
+    Customer *customer = new Customer(*groceryStore,name);
+    if(customer->getName() == "AnonymousCustomer"){
         return true ;
     }
     else{
