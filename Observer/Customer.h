@@ -10,8 +10,8 @@ private:
 public:
     Customer(GroceryStore &subject, std::string name);
     virtual ~Customer();
-    void update(const string &msg);
+    void update(const std::string &msg);
     void unsubscribeCustomer();
-    bool purchaseItem(string itemName,GroceryItem* groceryInventory);
+    bool purchaseItem(std::string itemName,GroceryItem* groceryInventory);
 
 };

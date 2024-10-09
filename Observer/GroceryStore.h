@@ -5,13 +5,12 @@
 #include <string>
 #include "Subject.h"
 
-using namespace std;
 
 #define TOTAL_GROCERY_ITEMS 5
 
 
 struct GroceryItem {
-    string itemName;
+    std::string itemName;
     int quantity;
 };
 
@@ -23,7 +22,7 @@ struct GroceryItem {
 class GroceryStore : public Subject {
 
 private:
-    list<Observer *> list_observer;
+    std::list<Observer *> list_observer;
     GroceryItem groceryItems[TOTAL_GROCERY_ITEMS];
 
 public:
@@ -32,8 +31,8 @@ public:
     virtual ~GroceryStore();
     void subscribe(Observer *observer);
     void unsubscribe(Observer *observer);
-    void notify(string msg);
-    void refillInventory(string itemName, int quantity);
+    void notify(std::string msg);
+    void refillInventory(std::string itemName, int quantity);
 
 };
 

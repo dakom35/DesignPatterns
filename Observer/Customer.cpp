@@ -8,22 +8,22 @@ Customer::~Customer() {
     std::cout << "Goodbye, I was an implementation of the Observer called " << this->name_<< ".\n";
 }
 
-void Customer::update(const string &msg) {
+void Customer::update(const std::string &msg) {
     std::cout << "Hey " << this->name_ << "! A new message is available --> " << msg << "\n";
 }
 
 void Customer::unsubscribeCustomer() {
-    std::cout << this->name_ << " wants to unsubscribe from the Grocery Store notifications - ";
+    std::cout << this->name_ << " unsubscribes from Grocery Store";
     subject_.unsubscribe(this);
 }
 
-bool Customer::purchaseItem(string itemName, GroceryItem* groceryInventory) {
+bool Customer::purchaseItem(std::string itemName, GroceryItem* groceryInventory) {
     std::cout << this->name_ <<" wants to purchase item " << itemName << " - ";
     for (int i = 0; i < TOTAL_GROCERY_ITEMS; i++) {
         if (itemName == groceryInventory[i].itemName) {
             if (groceryInventory[i].quantity > 0) {
                 groceryInventory[i].quantity--;
-                cout << "Item " << itemName << " is available\n";
+                std::cout << "Item " << itemName << " is available\n";
                 return true;
             }
         }
