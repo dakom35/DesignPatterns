@@ -16,7 +16,6 @@ GroceryStore::~GroceryStore() {
 }
 
 void GroceryStore::subscribe(Observer *observer) {
-    std::cout << "An observer has subscribed\n";
     list_observer.push_back(observer);
 }
 
