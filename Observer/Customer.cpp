@@ -18,6 +18,14 @@ void Customer::unsubscribeCustomer() {
     subject_.unsubscribe(this);
 }
 
+
+/*  @brief Purchases an item if available and adjusts inventory accordingly. 
+*
+*   @param groceryInventory pointer to an array of groceryItem
+*   @param itemName (string) name of the item the customer wants to purchase 
+*   @return (bool) True if the item has been purchased correctly, false otherwise (insufficient quantity)
+*   
+*/ 
 bool Customer::purchaseItem(std::string itemName, GroceryItem* groceryInventory) {
     std::cout << this->name_ <<" wants to purchase item " << itemName << " - ";
     for (int i = 0; i < TOTAL_GROCERY_ITEMS; i++) {
