@@ -9,21 +9,21 @@
 int main() {
     GroceryItem itemList[] = {{"Flour", 10}, {"Rice", 10}, {"Brown Bread", 0}, \
                               {"Blueberry Syrup", 0}, {"Detergent", 10}};   
-    GroceryStore *objGs = new GroceryStore(itemList);
-    Customer *objCust = new Customer(*objGs);
+    GroceryStore *groceryStore = new GroceryStore(itemList);
+    Customer *customer = new Customer(*groceryStore);
     GroceryItem* itemInventory = itemList ;
 
-    objCust->purchaseItem("Detergent", itemInventory);
-    objCust->purchaseItem("Flour",itemInventory);
-    objCust->purchaseItem("Rice",itemInventory);
-    objCust->purchaseItem("Brown Bread",itemInventory);
-    objCust->purchaseItem("Blueberry Syrup",itemInventory);
+    customer->purchaseItem("Detergent", itemInventory);
+    customer->purchaseItem("Flour",itemInventory);
+    customer->purchaseItem("Rice",itemInventory);
+    customer->purchaseItem("Brown Bread",itemInventory);
+    customer->purchaseItem("Blueberry Syrup",itemInventory);
 
-    objGs->refillInventory("Brown Bread",10);
-    objCust->purchaseItem("Brown Bread",itemInventory);
-    objCust->unsubscribeCustomer();
+    groceryStore->refillInventory("Brown Bread",10);
+    customer->purchaseItem("Brown Bread",itemInventory);
+    customer->unsubscribeCustomer();
 
-    objGs->refillInventory("Blueberry Syrup",10);
+    groceryStore->refillInventory("Blueberry Syrup",10);
     
     return 0;
 }
