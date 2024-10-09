@@ -12,7 +12,7 @@ using namespace std;
 
 struct GroceryItem {
     string itemName;
-    bool available;
+    int quantity;
 };
 
 
@@ -33,7 +33,7 @@ public:
     void subscribe(Observer *observer);
     void unsubscribe(Observer *observer);
     void notify(string msg);
-    void refillInventory(string itemName);
+    void refillInventory(string itemName, int quantity);
 
 };
 

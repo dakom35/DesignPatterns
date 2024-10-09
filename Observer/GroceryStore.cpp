@@ -7,7 +7,7 @@
 GroceryStore::GroceryStore(GroceryItem* grocery) {
     for (int i = 0; i < TOTAL_GROCERY_ITEMS; i++) {
         groceryItems[i].itemName = grocery[i].itemName;
-        groceryItems[i].available = grocery[i].available;
+        groceryItems[i].quantity = grocery[i].quantity;
     }
 }
 
@@ -35,10 +35,10 @@ void GroceryStore::notify(string msg) {
     }
 }
 
-void GroceryStore::refillInventory(string itemName) {
+void GroceryStore::refillInventory(string itemName, int quantity) {
     for (int i = 0; i < TOTAL_GROCERY_ITEMS; i++) {
         if (itemName == groceryItems[i].itemName) {
-            groceryItems[i].available = true;
+            groceryItems[i].quantity = quantity;
             cout << "Refilling the stock for item " << itemName << "\n";
             notify(("Item " + itemName + " has been refilled in the Grocery Store"));
         }
