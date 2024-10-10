@@ -53,6 +53,7 @@ std::string Customer::getName() {
 
 // Setter for name_
 void Customer::setName(std::string &name) {
+    if(name == "") name_ = "AnonymousCustomer" ; 
     name_ = name;
 }
 
