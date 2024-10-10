@@ -14,7 +14,7 @@ void Customer::update(const std::string &msg) {
 }
 
 void Customer::unsubscribeCustomer() {
-    std::cout << this->name_ << " unsubscribes from Grocery Store";
+    std::cout << this->name_ << " unsubscribes from Grocery Store\n";
     subject_.unsubscribe(this);
 }
 
@@ -26,14 +26,17 @@ void Customer::unsubscribeCustomer() {
 *   @return (bool) True if the item has been purchased correctly, false otherwise (insufficient quantity)
 *   
 */ 
-bool Customer::purchaseItem(std::string itemName, GroceryItem* groceryInventory) {
+bool Customer::purchaseItem(std::string itemName, GroceryItem* groceryInventory, int quantity) {
     std::cout << this->name_ <<" wants to purchase item " << itemName << " - ";
     for (int i = 0; i < TOTAL_GROCERY_ITEMS; i++) {
         if (itemName == groceryInventory[i].itemName) {
-            if (groceryInventory[i].quantity > 0) {
-                groceryInventory[i].quantity--;
+            if (groceryInventory[i].quantity >= quantity) {
+                groceryInventory[i].quantity -= quantity ;
                 std::cout << "Item " << itemName << " is available\n";
                 return true;
+            }
+            else{
+                std::cout << itemName << "is not available in such quantity.\n" ; 
             }
         }
     }

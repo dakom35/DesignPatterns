@@ -15,7 +15,7 @@ public:
     virtual ~Customer();
     void update(const std::string &msg);
     void unsubscribeCustomer();
-    bool purchaseItem(std::string itemName,GroceryItem* groceryInventory);
+    bool purchaseItem(std::string itemName, GroceryItem* groceryInventory, int quantity);
 
     GroceryStore& getSubject();
     std::string getName() ;
